@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const bodyParser = require('body-parser');
-const PORT=process.env.PORT;
+const PORT = process.env.PORT;
 const app = express();
 
 app.use(bodyParser.json());
@@ -45,8 +45,9 @@ fs.readFile('products.json', (err, data) => {
     if (!err) {
         products = JSON.parse(data);
         console.log(products);
-        app.listen(PORT, () => {
-            console.log("Server running on port 8080");
-        });
+
     }
+});
+app.listen(PORT, () => {
+    console.log("Server running on port 8080");
 });
