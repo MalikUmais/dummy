@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-app.get('/products', async (req, res) => {
+app.get('/product', async (req, res) => {
   const products = await Product.find();
   res.json(products);
   console.log(products);
