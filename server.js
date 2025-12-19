@@ -16,6 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/products', async (req, res) => {
   const products = await Product.find();
   res.json(products);
+  console.log(products);
 });
 
 app.listen(PORT, () => {
